@@ -1,0 +1,62 @@
+
+
+<div class="container main">
+        
+    <div class="col-md-4">
+   <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-7">
+  
+  <div class="container ">
+    <div class="products-container">
+      <div class="row rows">
+      
+        <div class="col-md-8 col-sm-8 m-2">
+          <div class="singlecard mb-3  card-border">
+            <div class="row g-0">
+              <div class="col-md-4 img-fluid" >
+                <ng-img-magnifier
+                [thumbImage]="singleProduct.image"
+                [fullImage]="singleProduct.image"
+                [top]="top"
+                [right]="right"
+                [lensWidth]="lensWidth"
+                [lensHeight]="lensHeight"
+                [resultWidth]="resultWidth"
+                [resultHeight]="resultHeight"
+                [imgWidth]="imgWidth"
+                [imgHeight]="imgHeight"
+              >
+              </ng-img-magnifier>
+             
+               <!-- <img src={{singleProduct.image}} class="img-fluid"/> -->
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <button class="btn btn-primary" data-testid="btn-category" id="categoryBtn">
+                   {{singleProduct.category}}
+                  </button>
+                  <h5 class="card-title">{{singleProduct.title}}</h5>
+                  <p class="card-text">{{singleProduct.description}}</p>
+                  <h6 class="card-title">
+                   ${{singleProduct.price}}
+                    <s>
+                     ${{singleProduct.price}}
+                    </s>
+                  </h6>
+                  Rating {{singleProduct.rating.rate}}
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <button class="btn btn-secondary m-2" [routerLink]="['/products']">Back</button>
+   </div>
+ 
+   </div>
+
+ 

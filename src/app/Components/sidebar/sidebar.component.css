@@ -1,0 +1,85 @@
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: medium;
+}
+a {
+  margin-left: 10%;
+  padding: 4px;
+  color: black;
+  cursor: pointer;
+}
+hr {
+  margin: 3%;
+}
+.fa {
+  color: gray;
+}
+
+.fa {
+  margin-right: 5%;
+}
+
+.link-section {
+  height: 20rem;
+}
+
+.sidebar {
+  width: 15rem;
+}
+.card {
+  border-radius: 10px;
+}
+.username {
+  font-size: medium;
+  font-weight: bold;
+}
+.nav-header {
+  margin-left: -3%;
+  margin-top: 1%;
+}
+.link {
+  margin: 0 11%;
+}
+.link:hover {
+  background-color: rgb(225, 232, 247);
+  border-radius: 25px;
+  padding-left: 10%;
+}
+.link:hover a {
+  color: #096afb;
+}
+
+.link:hover .fa {
+  color: #287bf7;
+}
+
+.badge {
+  margin: 1% 8% 0 0;
+}
+
+.sub-menu {
+  width: 80%;
+  margin-left: 9%;
+}
+.sub-link:hover {
+  color: #287bf7;
+}
+.sub-link:hover .fa{
+  color: #287bf7;
+}
+.yms{
+    height: 30px;
+    width: 60px;
+    font-size: 20px;
+    border-radius: 15px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 55px;
+    background-color: #3498DB ;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+  }

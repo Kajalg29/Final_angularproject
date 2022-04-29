@@ -1,0 +1,66 @@
+
+ <div class="container-fluid main">
+    <div class="col-md-4">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-7 user-data ">
+      <h2>User Details</h2>
+      <hr />
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+            
+             <img src="{{userImg && userImg.data ? userImg.data.avatar:''}}"  class="img-fluid img-round" alt="profile" />
+              </td>
+              <td>
+                <form>
+                  <div class="form-group block">
+                    <label class="lable">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control ib"
+                      placeholder= "{{singleUser? singleUser.name:''}}" 
+                     
+                    />
+                  </div>
+                  <div class="form-group block">
+                    <label class="lable">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control ib"
+                      placeholder= "{{singleUser? singleUser.username:''}}" 
+                    />
+                  </div>
+                  <div class="form-group block">
+                    <label class="lable">Email</label>
+                    <input
+                      type="email"
+                      class="form-control ib"
+                      placeholder= "{{singleUser? singleUser.email:''}}" 
+                    />
+                  </div>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+     
+
+      <div >
+        <button
+          type="button"
+          class="btn btn-secondary btn-sm"
+          (click)="back()"
+        >
+        Back
+          
+        </button>
+      </div>
+    </div>
+
+   
+  </div>

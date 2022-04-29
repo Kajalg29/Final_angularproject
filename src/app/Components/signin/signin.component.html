@@ -1,0 +1,41 @@
+<div class="conatiner">
+    <div class="innerdiv">
+        <h3 class="badge bg-primary" id="LogoBtn" data-testid="btn-logo"
+>Yms</h3>
+      <form #loginForm="ngForm" (ngSubmit)="getToken(loginForm.value)">
+        <div class="mb-3">
+          <input
+            id="email"
+            data-testid="email-field"
+            type="email"
+            class="form-control"
+            placeholder="Username"
+            name="email"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            id="password"
+            data-testid="password-field"
+            class="form-control"
+            placeholder="Password"
+          name="password"
+          ngModel
+            required
+          />
+        </div>
+        <button type="submit" id="LoginBtn" class="btn btn-primary m-3" data-testid="btn-login">
+          Login
+        </button>
+        <button type="reset" id="CancelBtn" class="btn btn-secondary" data-testid="cancel-btn">
+          Cancel
+        </button>
+        <p><strong>OR</strong></p>
+        <div><a class="btn btn-outline-primary m-2" href="" id="googleBtn" data-testid="btn-google">Login with Facebook</a></div>
+        <div><a class="btn btn-outline-danger" href="" id="facebookBtn" data-testid="facebook-login-btn">Login with Google</a></div>
+      </form>
+    </div>
+  </div>

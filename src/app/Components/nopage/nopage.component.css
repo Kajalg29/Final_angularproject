@@ -1,0 +1,10 @@
+button{
+    width: 30%;
+    margin: auto;
+}
+.err{
+    margin-top: 10%;
+}
+.errDiv{
+    background-color: white;
+}

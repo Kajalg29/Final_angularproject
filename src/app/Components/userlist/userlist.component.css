@@ -1,0 +1,25 @@
+.disp-users{
+    display: flex;
+    justify-content: center;
+
+}
+.innerdiv{
+    background-color: white;
+}
+.gmap{
+    color: red;
+    font-size: 30px;
+}
+a{
+    text-decoration: none;
+}
+agm-map{
+    height:100px;
+    width: 100px;
+}
+@media screen and (max-width: 991px) {
+    .disp-users{
+       display: inline-block;
+       width: 100%;
+    }
+}

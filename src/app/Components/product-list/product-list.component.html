@@ -1,0 +1,88 @@
+
+<div class="container-fluid main-sid">
+    <div class="row">
+        <div class="col-md-4">
+<app-sidebar></app-sidebar>
+</div>
+<div class="col-md-7 ">
+   <div class="container main">
+     <div class="products">
+       <div class="p-2 header">
+         <strong>List Products</strong>
+         <span class="text-primary">
+           show Item per page
+           <select>
+          
+             <option value='4'>4</option>
+           </select>
+         </span>
+       </div>
+       <hr />
+
+       <div class="card" *ngFor="let item of data | paginate: { itemsPerPage: count, currentPage: p }">
+         
+         
+               <div class="row rows g-0">
+                 <div class="col-md-4">
+                    <a [routerLink]="['/products', item.id]"> <img
+                     src={{item.image}}
+                     class="img-fluid rounded-start"
+                     alt="..."
+                   /></a>
+                 </div>
+                 <div class="col-md-8">
+                   <div class="card-body">
+                     <button class="btn btn-primary" data-testid="btn-cat" id="CatBtn">
+                        {{item.category}}
+                     </button>
+                     <!-- <h3 (click)="onSelect(item)"> -->
+                       
+                       <h3 class="card-title text-link">{{item.title.substring(0,500)}}</h3> 
+                      
+                     <!-- </h3> -->
+                     <p class="card-text">{{item.description.substring(0,200)}}</p>
+                     <h6 class="card-title">
+                        {{item.price}}
+                       <s>
+                       {{(item.price) + (math.round(item.price * 0.10)) }}
+                       </s>
+                     </h6>
+                  {{item.rating.rate}}
+                  <ngb-rating [max]="5" [(rate)]="item.rating.rate" [readonly]="true"></ngb-rating>
+
+                       <!-- <div *ngIf="item.rating.rate > 0.5 && item.rating.rate < 1.5">
+                        
+                        <ngb-rating [max]="5" [(rate)]="starRating1" [readonly]="true"></ngb-rating>
+                       </div>
+                       <div *ngIf="item.rating.rate > 1.5 && item.rating.rate < 2.5">
+                        
+                        <ngb-rating [max]="5" [(rate)]="starRating2" [readonly]="true"></ngb-rating>
+                       </div>
+                       <div *ngIf="item.rating.rate > 2.5 && item.rating.rate < 3.5">
+                        
+                        <ngb-rating [max]="5" [(rate)]="starRating3" [readonly]="true"></ngb-rating>
+                       </div>
+                       <div *ngIf="item.rating.rate > 3.5 && item.rating.rate < 4.5">
+                        
+                        <ngb-rating [max]="5" [(rate)]="starRating4" [readonly]="true"></ngb-rating>
+                       </div>
+                       <div *ngIf="item.rating.rate > 4.5 && item.rating.rate < 5">
+                        
+                        <ngb-rating [max]="5" [(rate)]="starRating5" [readonly]="true"></ngb-rating>
+                       </div>
+                    -->
+                   </div>
+                 </div>
+               </div>
+          
+           
+       </div>
+     </div>
+    
+   </div>
+   <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+</div>
+   </div>

@@ -1,0 +1,35 @@
+.main {
+  
+    /* width: 100vw; */
+    display: flex;
+      justify-content: center;
+     
+  }
+  .products-container {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 80%; 
+   margin: 5%; 
+ display: flex;
+ justify-content: center;
+   
+  }
+  .card-title{
+    padding-top: 10px;
+    color: rgb(68, 86, 252);
+}
+  .singlecard{
+      /* padding: 10px; */
+      height: auto;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+  }
+@media screen and (max-width:576px) {
+  .main{
+    display: inline-block;
+  }
+}
+  

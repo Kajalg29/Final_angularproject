@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<div class="container disp-users">
+<div class="col-md-4"><app-sidebar></app-sidebar></div>
+<div class="col-md-7">
+    <div class="innerdiv">
+<h4 class="mt-4">User Manager</h4>
+<hr/>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Website</th>
+                <th scope="col">city</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let user of users  | paginate: { itemsPerPage: 4, currentPage: p }">
+                
+                <td> {{user.id}}</td>
+                <td><a [routerLink]="['/userdetails/', user.id]">{{user.name}}</a></td>
+                <td>{{user.email}}</td>
+                <td>{{user.website}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>
+                
+                <td>  <a (click)="openMap(user.address.geo)">
+                    <i class="fa fa-map-marker gmap"></i>
+                  </a>
+                   
+               </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+    <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+</div>
+</div>
+</div>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{ display: displayStyle }"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Map</h4>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="closeMap()"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <google-map height="400px" width="100%">
+          <map-marker> </map-marker>
+        </google-map>
+      </div>
+    </div>
+  </div>
+</div>
